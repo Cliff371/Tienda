@@ -1,3 +1,87 @@
-li{
-    color: red;
+#encabezado{
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 8%;
+    width: 100%;
+    background-color: #3333ff;
+    color: white;
+    padding-left: 15px;
+}
+
+#menu{
+    position: absolute;
+    top: 8%;
+    left: 0;
+    height: 4%;
+    width: 100%;
+    background-color: #66ff33;
+    color: black;
+    padding-left: 15px;
+}
+
+#menu a:visited {
+    color: navy;
+}
+#menu a:hover {
+    background-color: green;
+    color: white;
+}
+
+#barraLateral {
+    position: absolute;
+    top: 12%;
+    left: 0;
+    height: 81%;
+    width: 19%;
+    background-color: #66ccff;
+    color: black;
+    padding-left: 15px;
+}
+
+#contenido{
+    position: absolute;
+    top: 12%;
+    left: 20%;
+    height: 81%;
+    width: 79%;
+    background-color: #99ff99;
+    color: black;
+    padding-left: 15px;
+    overflow: auto;
+}
+
+#piePagina{
+    position: absolute;
+    bottom: 0;
+    left: 0%;
+    height: 7%;
+    width: 100%;
+    background-color: aquamarine;
+    color: black;
+    padding-left: 15px;
+    text-align: center;
+}
+
+#piePagina address{
+    display: inline;
+}
+
+#encabezadotabla{
+    font-size: 20px;
+    background-color: #99ff33;
+    color: blue;        
+}
+
+#tablaResumen tr:nth-child(odd) {
+    background-color: blue;
+    color: #99ff33;      
+}
+#tablaResumen tr:nth-child(even) {
+    background-color: #99ff33;
+    color: blue;      
+}
+
+#tablaResumen{
+    font-size: 20px;
 }

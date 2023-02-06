@@ -1,24 +1,96 @@
-<html>
+<html lang="es">
     <head>
         <title>Tienda en linea</title>
+        <br/>
         <meta charset="UTF-8">
+        <meta name="descripcion" content="Pagina de la leccion 2"/>
+        <meta name="keywords" content="html5, css, web, fidelitas"/>
+        <link href="css/estilos.css" rel="stylesheet" type="text/css"/>
+        
     </head>
     <body>
-        <a href="ejemplo9.html"> Back</a>|
-        <a href="index.html"> Home</a>|
-        <a href="ejemplo2.html"> Next</a><br>
-        
-        <div>
-            <h1 style="text-align: center">Home</h1>
-            <p>Bienvenidos al curso de Desarrollo de Aplicaciones Web y Patrones</p>
-        </div>
-        <p>Lorem ipsum dolor sit amet consectetur adipiscing elit vehicula orci dui vestibulum, mi imperdiet praesent non ornare mattis ultrices erat fusce aliquam. Phasellus class cubilia porta potenti tellus massa euismod, hac eleifend donec convallis aliquam porttitor etiam, nibh torquent nostra dui aptent purus. Posuere sodales tempus rutrum libero tristique inceptos varius faucibus, quis fusce felis magna viverra suscipit habitasse sociosqu pulvinar, ridiculus odio turpis quisque nullam vitae lectus.</p>
-        <p>Etiam lobortis mattis dapibus commodo cum phasellus fames justo platea vulputate velit, quis pretium nisl nulla morbi magna curae nostra diam torquent, enim et viverra aptent pellentesque tincidunt rutrum fermentum metus per. Inceptos himenaeos mi sem malesuada donec eleifend magna, eu tempor bibendum posuere at semper ante venenatis, dis aenean egestas metus phasellus nibh. Sodales dictum iaculis est sagittis cubilia ad eu aliquam nec blandit netus fringilla ante class sed, posuere odio porta habitant morbi tortor himenaeos gravida sem vulputate molestie mi nunc facilisis.</p>
-        <p>Parturient eleifend luctus mollis magna feugiat litora cum condimentum dignissim elementum purus, blandit ullamcorper gravida dis ligula facilisis tellus cursus vehicula felis, inceptos sociis habitant malesuada a iaculis pretium nam metus phasellus. Malesuada est felis convallis vulputate diam mattis duis montes, ornare auctor penatibus bibendum lectus cum litora, suscipit porta nascetur justo nunc vestibulum hendrerit. Sollicitudin faucibus fermentum quam integer suscipit ante laoreet aliquet consequat tellus fringilla, primis auctor accumsan vel tempus risus natoque sodales porta pellentesque.</p>
-        <br/> 
-        <br/> 
-        <br/> 
-        <br/>     
-        <p>Última línea</p>
+        <!--Esta etiqueta indica al navegador de que es un encabezado -->
+        <header id="encabezado">
+            <h1>Tienda en linea</h1>
+            <br/>
+        </header>
+        <nav id="menu">
+            <a href="ejemplo9.html"> Atras</a>|
+            <a href="index.html"> Home</a>|
+            <a href="ejemplo2.html"> Adelante</a><br>
+        </nav>
+
+        <aside id="barraLateral">
+            <h2>Productos mas vendidos</h2>
+            <p>Lorem ipsum dolor sit amet consectetur adipiscing elit vehicula orci dui vestibulum, mi imperdiet praesent non ornare mattis ultrices erat fusce aliquam. Phasellus class cubilia porta potenti tellus massa euismod, hac eleifend donec convallis aliquam porttitor etiam, nibh torquent nostra dui aptent purus. Posuere sodales tempus rutrum libero tristique inceptos varius faucibus, quis fusce felis magna viverra suscipit habitasse sociosqu pulvinar, ridiculus odio turpis quisque nullam vitae lectus.</p>
+        </aside>
+
+        <section id="contenido">
+            <h2>Articulos mas vendidos</h2>
+            <article>
+                <header>Asus Vvivobook</header>
+                <p>Lorem ipsum dolor sit amet consectetur adipiscing elit vehicula orci dui vestibulum, mi imperdiet praesent non ornare mattis ultrices erat fusce aliquam. Phasellus class cubilia porta potenti tellus massa euismod, hac eleifend donec convallis aliquam porttitor etiam, nibh torquent nostra dui aptent purus. Posuere sodales tempus rutrum libero tristique inceptos varius faucibus, quis fusce felis magna viverra suscipit habitasse sociosqu pulvinar, ridiculus odio turpis quisque nullam vitae lectus.</p>
+                <figure>
+                    <img src="images/Computadora Asus.png" alt="Asus Vvivobook" width="200"/>
+                    <figcaption>Imagen con fines ilustrativos</figcaption>
+                </figure>
+            </article>
+            <article>
+                <header>Alienware</header>
+                <p>Lorem ipsum dolor sit amet consectetur adipiscing elit vehicula orci dui vestibulum, mi imperdiet praesent non ornare mattis ultrices erat fusce aliquam. Phasellus class cubilia porta potenti tellus massa euismod, hac eleifend donec convallis aliquam porttitor etiam, nibh torquent nostra dui aptent purus. Posuere sodales tempus rutrum libero tristique inceptos varius faucibus, quis fusce felis magna viverra suscipit habitasse sociosqu pulvinar, ridiculus odio turpis quisque nullam vitae lectus.</p>
+                <figure>
+                    <img src="images/Computadora alien.png" alt="Alienware" width="200"/>
+                    <figcaption>Mas vendido</figcaption>
+                </figure>
+            </article>
+            <article>
+                <header>Impresora 3D</header>
+                <p>Lorem ipsum dolor sit amet consectetur adipiscing elit vehicula orci dui vestibulum, mi imperdiet praesent non ornare mattis ultrices erat fusce aliquam. Phasellus class cubilia porta potenti tellus massa euismod, hac eleifend donec convallis aliquam porttitor etiam, nibh torquent nostra dui aptent purus. Posuere sodales tempus rutrum libero tristique inceptos varius faucibus, quis fusce felis magna viverra suscipit habitasse sociosqu pulvinar, ridiculus odio turpis quisque nullam vitae lectus.</p>
+                <figure>
+                    <img src="images/Impresora 3D.png" alt="Impresora 3D" width="200"/>
+                    <figcaption>Mas economico</figcaption>
+                </figure>
+            </article>
+            <br/>
+            <br/>
+            <br/>
+            <br/>
+            <article>
+                <header>Lineas de producto</header>
+                <table border="0">
+                    <thead id="encabezadotabla">
+                        <tr>
+                            <th>Codigo</th>
+                            <th>Nombre</th>
+                        </tr>
+                    </thead>
+                    <tbody id="tablaResumen"
+                        <tr>
+                        <td>1</td>
+                        <td>Teclados</td>
+                        </tr>
+                        <tr>
+                        <td>2</td>
+                        <td>Monitores</td>
+                        </tr>
+                        <tr>
+                        <td>3</td>
+                        <td>Headsets</td>
+                        </tr>
+                        <tr>
+                        <td>4</td>
+                        <td>Portatiles</td>
+                        </tr>
+                        <tr>
+                        <td>5</td>
+                        <td>Perifericos</td>
+                        </tr>
+                        </tbody>
+                </table>
+            </article>
+            <br/>
+            <br/>
+        </section>
+        <footer id="piePagina">Derechos reservados &COPY; 2023 <address>San José, Barrio Lujan</address> <adress>Tel: 8985-5230</adress></footer>
     </body>
 </html>
