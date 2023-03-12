@@ -2,7 +2,6 @@ package com.tienda.controller;
 
 import com.tienda.domain.Cliente;
 import com.tienda.service.ClienteService;
-import com.tienda.service.ClienteService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -27,7 +26,7 @@ public class IndexController {
         return "index";
     }
 
-    @GetMapping("/nuevoCliente")
+    @GetMapping("/nuevocliente")
     public String nuevoCliente(Cliente cliente) {
         return "modificarCliente";
     }
@@ -44,6 +43,7 @@ public class IndexController {
         model.addAttribute("cliente", cliente);
         return "modificarCliente";
     }
+    
     @GetMapping("/eliminarCliente/{idCliente}")
     public String eliminarCliente(Cliente cliente){
         clienteService.delete(cliente);

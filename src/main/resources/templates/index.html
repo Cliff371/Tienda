@@ -5,33 +5,35 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
     </head>
     <body>
-        <h2>Lista de estados</h2>
-        <a th:href="@{nuevoestado}">Nuevo Estado</a>
+        <h2>Lista de clientes</h2>
+        <a th:href="@{nuevocliente}">Nuevo Cliente</a>
         <br/>
         <br/>
-        <div th:if="${estados != null and !estados.empty}">
+        <div th:if="${clientes != null and !clientes.empty}">
             <table border="1">
                 <thead>
-                <th>Nombre del Estado</th>
-                <th>Capital</th>
-                <th>Poblacion</th>
-                <th colspan="2">Acciones</th>
+                <th>Nombre</th>
+                <th>Apellidos</th>
+                <th>Correo</th>
+                <th>Telefono</th>
                 </thead>
                 <tbody>
-                    <tr th:each="item : ${estados}">
-                        <td th:text="${item.nombreEstado}"></td>
-                        <td th:text="${item.capital}"></td>
-                        <td th:text="${item.poblacion}"></td>
-                       
-                        <td><a th:href="@{/modificarEstado/}+${item.idEstado}">Modificar</a></td>
-                        <td><a th:href="@{/eliminarCliente/}+${item.idEstado}">Eliminar</a></td>
+                    <tr th:each="item : ${clientes}">
+                        <td th:text="${item.nombre}"></td>
+                        <td th:text="${item.apellidos}"></td>
+                        <td th:text="${item.telefono}"></td>
+                        <td th:text="${item.correo}"></td>
+
+                        <td><a th:href="@{/modificarCliente/}+${item.idCliente}">Modificar</a></td>
+                        <td><a th:href="@{/eliminarCliente/}+${item.idCliente}">Eliminar</a></td>
                     </tr>
                 </tbody>
             </table>
         </div>
         <div th:if="${estados == null or estados.empty}">
-            la lista de estados esta vacia...
+            <br/>
+            La lista de clientes esta vacia...
         </div>
-        
+
     </body>
 </html>

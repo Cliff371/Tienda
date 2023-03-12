@@ -19,8 +19,7 @@ public class Cliente implements Serializable{
     private String correo;
     private String telefono;
 
-    public Cliente() {
-        
+    public Cliente() {    
     }
 
     public Cliente(String nombre, String apellidos, String correo, String telefono) {
@@ -29,5 +28,4 @@ public class Cliente implements Serializable{
         this.correo = correo;
         this.telefono = telefono;
     }
-
 }
