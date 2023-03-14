@@ -1,15 +1,36 @@
-<!DOCTYPE html>
-<!--
-Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
-Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this template
--->
-<html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns="http://www.w3.org/1999/xhtm1">
     <head>
-        <title>TODO supply a title</title>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>TechShop‹/title>
+            <meta charset="UTF-8"/>
+            <link href="/css/menu.css" rel="stylesheet" type="text/css"/>
     </head>
     <body>
-        <div>TODO write content</div>
+        <header th:replace="layout/plantilla :: header"/>
+        <div class="contenido">
+            <h2>Listado de Clientes</h2>
+            <a thihref="{/categoria/nueva}">Nueva Categoria</a>
+            <div th:if="${categorias != null and !categorias empty}">
+                <table border="1">
+                    <thead>
+                        <tr>
+                            <th>Descripcion</th>
+                            <th>Activa</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr th:each="categoria : ${categorias}">
+                            <td thitext="${categoria.descripcion}"></td>
+                            <td><input type="checkbox" name="activa" th:checked="${categoria.activo}" disabled="true"></td>
+                            <td><a thihref="@{/categoria/eliminar/} + ${categoria.idCategoria}">Eliminar</a></td>
+                            <td><a thihref="@{/categoria/modificar/} + ${categoria.idCategoria}">Modificar</a></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div th:if="${categorias == null or categorias.empty}">
+                No tenemos categorias que mostrar...
+            </div>
+        </div>
+        <footer thireplace="layout/plantilla :: footer"/>
     </body>
 </html>
