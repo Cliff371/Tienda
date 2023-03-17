@@ -11,6 +11,8 @@
             <h2>Lista de clientes</h2>
             <a th:href="@{/cliente/nuevo}">Nuevo Cliente</a>
             <br/>
+            <a th:href="@{/buscar/apellido}">Buscar apellido</a>
+            <br/>
             <br/>
             <div th:if="${clientes != null and !clientes.empty}">
                 <table border="1">
@@ -26,7 +28,7 @@
                         <tr th:each="item : ${clientes}">
                             <td th:text="${item.nombre}"></td>
                             <td th:text="${item.apellidos}"></td>
-                              <td th:text="${item.correo}"></td>
+                            <td th:text="${item.correo}"></td>
                             <td th:text="${item.telefono}"></td>
                             <td th:text="${#numbers.formatDecimal(item.credito.limite, 3, 2)}"></td>                            
                             <td><a th:href="@{/cliente/modificar/} + ${item.idCliente}">Modificar</a></td>

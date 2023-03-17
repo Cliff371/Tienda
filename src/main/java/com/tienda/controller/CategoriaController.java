@@ -19,7 +19,6 @@ public class CategoriaController {
 
         var categorias = categoriaService.getCategorias(false);
         model.addAttribute("categorias", categorias);
-
         return "/categoria/listado";
     }
 

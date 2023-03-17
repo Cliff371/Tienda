@@ -1,15 +1,15 @@
 <html xmlns:th="http://www.thymeleaf.org" xmlns="http://www.w3.org/1999/xhtm1">
     <head>
-        <title>TechShop‹/title>
+        <title>TechShop</title>
             <meta charset="UTF-8"/>
             <link href="/css/menu.css" rel="stylesheet" type="text/css"/>
     </head>
     <body>
         <header th:replace="layout/plantilla :: header"/>
         <div class="contenido">
-            <h2>Listado de Clientes</h2>
-            <a thihref="{/categoria/nueva}">Nueva Categoria</a>
-            <div th:if="${categorias != null and !categorias empty}">
+            <h2>Listado de Categorias</h2>
+            <a th:href="@{/categoria/nuevo}">Nueva Categoria</a>
+            <div th:if="${categorias != null and !categorias.empty}">
                 <table border="1">
                     <thead>
                         <tr>
@@ -19,10 +19,10 @@
                     </thead>
                     <tbody>
                         <tr th:each="categoria : ${categorias}">
-                            <td thitext="${categoria.descripcion}"></td>
+                            <td th:text="${categoria.descripcion}"></td>
                             <td><input type="checkbox" name="activa" th:checked="${categoria.activo}" disabled="true"></td>
-                            <td><a thihref="@{/categoria/eliminar/} + ${categoria.idCategoria}">Eliminar</a></td>
-                            <td><a thihref="@{/categoria/modificar/} + ${categoria.idCategoria}">Modificar</a></td>
+                            <td><a th:href="@{/categoria/eliminar/} + ${categoria.idCategoria}">Eliminar</a></td>
+                            <td><a th:href="@{/categoria/modificar/} + ${categoria.idCategoria}">Modificar</a></td>
                         </tr>
                     </tbody>
                 </table>

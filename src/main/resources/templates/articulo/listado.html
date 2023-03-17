@@ -1,32 +1,31 @@
-<html xmlns:th="http://ww.thymeleaf.org"
-      xming="http://ww.w3.0r9/1999/Xhtml">
+<html xmlns:th="http://ww.thymeleaf.org" xming="http://ww.w3.0r9/1999/Xhtml">
     <head>
-        <title>TechShop‹/title>
-            <meta charget-"UTF-8"/>
-            <link href="/css/menu.css" rel="stylesheet" type="text/css"/>
+        <title>TechShop</title>
+        <meta charget="UTF-8"/>
+        <link href="/css/menu.css" rel="stylesheet" type="text/css"/>
     </head>
     <body>
         <header th:replace="layout/plantilla :: header"/>
         <div class="contenido">
-            <h2>Listado de Clientes</h2>
-            <a th:href="@{/articulo/nuevo]">Nueva Articulo</a>
-            <div th:if="${articulos != null and !articulos.empty}">
+            <h2>Listado de Articulos</h2>
+            <a th:href="@{/articulo/nuevo}">Nuevo Articulo</a>
+            <div th:if="${articulo != null and !articulo.empty}">
                 <table border="1">
-                       <thead>
-                    <tr>
-                        <th>Descripcion‹/th>
-                        <th>Precio‹/th>
-                        <th>Existencias‹/th>
-                        <th>Activa</th>
-                    </tr>
+                    <thead>
+                        <tr>
+                            <th>Descripcion</th>
+                            <th>Precio</th>
+                            <th>Existencias</th>
+                            <th>Activa</th>
+                        </tr>
                     </thead>
                     <tbody>
-                        <tr th:each="articulo : §{articulos}">
+                        <tr th:each="articulo : ${articulo}">
                             <td thitext="${articulo.descripcion}"></td>
-                            <td thitext="$ {#numbers.formatDecimal(articulo.precio,3,2)}" style="text-align: right"></td>
-                            <td thitext="S {articulo existencia}" style="text-align: center"></td>
+                            <td thitext="${#numbers.formatDecimal(articulo.precio,3,2)}" style="text-align: right"></td>
+                            <td thitext="S{articulo existencia}" style="text-align: center"></td>
                             <td><input type="checkbox" name="activa" th:checked="S{articulo.activo}" disabled-"true"></td>
-                            <td><a th:href="@{/articulo/eliminar/} + § {articulo.idArticulo}">Eliminar</a></td>
+                            <td><a th:href="@{/articulo/eliminar/} + $ {articulo.idArticulo}">Eliminar</a></td>
                             <td><a th:href="@{/articulo/modificar/} + $ {articulo.idArticulo}">Modificar</a></td>
                         </tr>
                     </tbody>
