@@ -13,6 +13,9 @@ public interface ClienteService {
 
     public void delete(Cliente cliente);
 
-    public List<Cliente> findByApellidosContainingIgnoreCase(String apellidos);
-
+    public List<Cliente> getClientePorNombre(String nombre);
+    
+    public List<Cliente> getClientePorTelefono(String telefono);
+    
+    public List<Cliente> findByNombreOrApellidosPrTelefono(String nombre, String apellidos, String telefono);   
 }

@@ -48,8 +48,16 @@ public class ClienteServiceImpl implements ClienteService {
     }
 
     @Override
-    public List<Cliente> findByApellidosContainingIgnoreCase(String apellidos) {
-        return clienteDao.findByApellidosContainingIgnoreCase(apellidos);
+    public List<Cliente> getClientePorNombre(String nombre) {
+        return clienteDao.findByNombre(nombre);
     }
 
+    @Override
+    public List<Cliente> getClientePorTelefono(String telefono) {
+        return clienteDao.findByTelefono(telefono);
+    }
+
+    @Override
+    public List<Cliente> findByNombreOrApellidosPrTelefono(String nombre, String apellidos, String telefono) {
+        return clienteDao.findByNombreOrApellidosOrTelefono(nombre, apellidos, telefono);   }
 }

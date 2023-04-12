@@ -2,13 +2,12 @@ package com.tienda.controller;
 
 import com.tienda.domain.Cliente;
 import com.tienda.service.ClienteService;
-import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.Banner.Mode;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
 public class ClienteController {
@@ -21,7 +20,6 @@ public class ClienteController {
 
         var clientes = clienteService.getClientes();
         model.addAttribute("clientes", clientes);
-
         return "/cliente/listado";
     }
 
@@ -49,10 +47,8 @@ public class ClienteController {
         return "redirect:/cliente/listado";
     }
 
-    @GetMapping("/cliente/listado/apellidos")
-    public String getByApellidosContainingIgnoreCase(String apellidos) {
-        clienteService.findByApellidosContainingIgnoreCase(apellidos);
-        return "redirect/cliente/apellidoCliente";
-
+    @GetMapping("/cliente/buscar")
+    public String buscar(Cliente cliente) {
+        return "cliente/buscarCliente";
     }
 }

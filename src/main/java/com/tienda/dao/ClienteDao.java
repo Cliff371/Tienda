@@ -5,7 +5,12 @@ import com.tienda.domain.Cliente;
 import java.util.List;
 
 
-public interface ClienteDao extends CrudRepository<Cliente, Object> {
+public interface ClienteDao extends CrudRepository<Cliente, Long> {
     
-    List<Cliente> findByApellidosContainingIgnoreCase(String apellidos);
+   public List<Cliente> findByNombre(String nombre);
+    
+   public List<Cliente> findByTelefono(String telefono);
+   
+   public List<Cliente> findByNombreOrApellidosOrTelefono(String nombre, String apellidos, String telefono);
+   
 }
